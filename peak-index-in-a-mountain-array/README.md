@@ -1,3 +1,4 @@
+[Discussion Post (created on 8/2/2021 at 23:16)](https://leetcode.com/problems/peak-index-in-a-mountain-array/submissions/)  
 <h2>852. Peak Index in a Mountain Array</h2><h3>Easy</h3><hr><div><p>Let's call an array <code>arr</code> a <strong>mountain</strong>&nbsp;if the following properties hold:</p>
 
 <ul>
