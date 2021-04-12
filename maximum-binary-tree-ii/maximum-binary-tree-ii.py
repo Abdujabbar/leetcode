@@ -6,29 +6,17 @@
 #         self.right = right
 class Solution:
     def insertIntoMaxTree(self, root: TreeNode, val: int) -> TreeNode:
-        self.items = []
-        def dfs(r:TreeNode):
-            if not r:
-                return
-            dfs(r.left)
-            self.items.append(r.val)
-            dfs(r.right)
+        if not root or val > root.val:
+            return TreeNode(val, root, None)
         
-        dfs(root)
+        node = root
         
-        self.items.append(val)
-        print(self.items)
-        def buildTree(nums):
-            
-            if not nums:
-                return None
-            max_value = max(nums)
-            index = nums.index(max_value)
-            left = nums[:index]
-            right = nums[index + 1:]
-            node = TreeNode(max_value)
-            node.left = buildTree(left)
-            node.right = buildTree(right)
-            return node
+        while node.right:
+            if val > node.right.val:
+                node.right = TreeNode(val, node.right, None)
+                return root
+            node = node.right
         
-        return buildTree(self.items)
+        node.right = TreeNode(val)
+        
+        return root
