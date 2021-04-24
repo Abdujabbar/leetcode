@@ -1,3 +1,4 @@
+[Discussion Post (created on 24/3/2021 at 17:55)](https://leetcode.com/problems/split-a-string-in-balanced-strings/submissions/)  
 <h2>1221. Split a String in Balanced Strings</h2><h3>Easy</h3><hr><div><p><strong>Balanced</strong> strings are those that have an equal quantity of <code>'L'</code> and <code>'R'</code> characters.</p>
 
 <p>Given a <strong>balanced</strong> string <code>s</code>, split it in the maximum amount of balanced strings.</p>
