@@ -3,18 +3,31 @@ class Solution:
         """
         Do not return anything, modify matrix in-place instead.
         """
-        rows = set()
-        cols = set()
         
+        is_col = False
         for i in range(len(matrix)):
-            for j in range(len(matrix[0])):
+            if matrix[i][0] == 0:
+                is_col = True
+            for j in range(1, len(matrix[0])):
                 if matrix[i][j] == 0:
-                    rows.add(i)
-                    cols.add(j)
-    
-        for i in range(len(matrix)):
-            for j in range(len(matrix[0])):
-                if i in rows or j in cols:
+                    matrix[i][0] = 0
+                    matrix[0][j] = 0
+        
+        for i in range(1, len(matrix)):
+            for j in range(1, len(matrix[0])):
+                if not matrix[i][0] or not matrix[0][j]:
                     matrix[i][j] = 0
+        
+        if matrix[0][0] == 0:
+            for j in range(len(matrix[0])):
+                matrix[0][j] = 0
+        
+        if is_col:
+            for j in range(len(matrix)):
+                matrix[j][0] = 0
+        
+        
+        
+        
         
         
