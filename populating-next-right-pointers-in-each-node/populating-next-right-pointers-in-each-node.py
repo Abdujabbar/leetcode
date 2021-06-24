@@ -12,27 +12,14 @@ class Solution:
     def connect(self, root: 'Node') -> 'Node':
         if not root:
             return root
-        queue = deque([root])
         
+        if root.left:
+            root.left.next = root.right
         
-        while queue:
-            prev = None
-            sz = len(queue)
-            while sz:
-                
-                target = queue.popleft()
-                                
-                if target.left:
-                    queue.append(target.left)
-                    
-                if target.right:
-                    queue.append(target.right)
-                
-                if prev:
-                    prev.next = target
-                
-                prev = target
-                
-                sz -= 1
+        if root.right and root.next:
+            root.right.next = root.next.left
+        
+        self.connect(root.left)
+        self.connect(root.right)
         
         return root
